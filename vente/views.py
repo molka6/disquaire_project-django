@@ -2,7 +2,7 @@ from django.shortcuts import render ,get_object_or_404
 from django.http import HttpResponse
 from .models import Album, Artist, Contact, Booking
 from django.template import loader
-from .forms import ContactForm
+from .forms import ContactForm, ParagraphErrorList
 
 # get les album de la table (Album)
 def index(request):
@@ -23,7 +23,7 @@ def detail(request, album_id):
         'thumbnail': album.picture
     }
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = ContactForm(request.POST, error_class=ParagraphErrorList)
         if form.is_valid():
                 email = form.cleaned_data['email']
                 name = form.cleaned_data['name']
@@ -48,42 +48,6 @@ def detail(request, album_id):
         context['form'] = form    
 
     return render(request, 'vente/detail.html', context)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def search(request):
     query = request.GET.get('query')
     if not query:
@@ -118,14 +82,6 @@ def search(request):
 
 
 
-
-
-# # afficher tous les album
-# def listing(request):
-#     albums = Album.objects.filter(available=True)
-#     formatted_albums = ["<li>{}</li>".format(album.title) for album in albums]
-#     message = """<ul>{}</ul>""".format("\n".join(formatted_albums))
-#     return HttpResponse(message)
 
 
     

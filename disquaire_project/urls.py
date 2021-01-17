@@ -17,14 +17,9 @@ from django.conf import settings
 from django.conf.urls import include, url
 from django.urls import path
 from django.contrib import admin
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^store/', include('store.urls')),
-    # url(r'^vente/', include('vente.urls', namespace='vente')),
-    url(r'^vente/', include(   ('vente.urls', 'vente'),  namespace='vente')    ),
-
-    
+    url(r'^vente/', include(   ('vente.urls', 'vente'),  namespace='vente')    ),   
 ]
 if settings.DEBUG:
     import debug_toolbar

@@ -1,12 +1,7 @@
-/*!
- * Start Bootstrap - Business Casual (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('../img/theboatthatrocked.jpg') no-repeat center center fixed;
+    background: url('../img/slide-3.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -35,7 +30,6 @@ hr {
     max-width: 400px;
     border-color: #999999;
 }
-
 .brand,
 .address-bar {
     display: none;
@@ -101,7 +95,6 @@ hr {
     float: none;
     margin: 0 auto 0;
 }
-
 footer {
     background: #fff;
     background: rgba(255,255,255,0.9);
